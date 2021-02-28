@@ -1,0 +1,17 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div class="nav" th:fragment="header">
+<div class="navbuttons">
+    <a class="buttonLook menuButton" th:href="@{/home}">home</a>
+    <a class="buttonLook menuButton" th:href="@{/about}">about</a>
+    <a class="buttonLook menuButton" th:href="@{/venuelist}">venuelist</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">header</div>
+<div class="row1">
+    <img th:src="@{/img/car logo.jpg}" src="../img/car%20logo.jpg" alt="car logo" height="540" width="800">
+</div>
+<div th:replace="fragments/footer :: footer">footer</div>
+</body>
+</html>

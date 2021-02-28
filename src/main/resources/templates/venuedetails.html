@@ -1,0 +1,78 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">header</div>
+
+<div class="row1">
+    <div class="row1content" th:if="${venueName}">
+        <h2 th:text="${venueName.name}">venuedetails</h2>
+
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/venuedetails/${prevIndex}|}">&lt;</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/venuedetails/${nextIndex}|}">&gt;</a>
+        </div>
+        <table>
+            <tr>
+                <td>merk:</td>
+                <td><a th:text="${venueName.brand}">brand></a></td>
+            </tr>
+            <tr>
+                <td>prijs van de auto:</td>
+                <td><a th:text="${venueName.price}">prijs></a></td>
+            </tr>
+            <tr>
+                <td>hoeveel km op de telller:</td>
+                <td><a th:text="${venueName.kilometers}">km></a></td>
+            </tr>
+            <tr>
+                <td>brandstof:</td>
+                <td><a th:text="${venueName.fuel}">brandstof></a></td>
+            </tr>
+            <tr>
+                <td>Jaar:</td>
+                <td><a th:text="${venueName.year}">Jaar></a></td>
+            </tr>
+            <tr>
+                <td>kleur:</td>
+                <td><a th:text="${venueName.color}">kleur></a></td>
+            </tr>
+            <tr>
+                <td>for sale:</td>
+                <td><a th:text="${venueName.forSale}? 'Yes' : 'No'">for sale></a></td>
+            </tr>
+            <tr>
+                <td>radio:</td>
+                <td><a th:text="${venueName.radio}? 'Yes' : 'No'">radio></a></td>
+            </tr>
+            <tr>
+                <td>gps:</td>
+                <td><a th:text="${venueName.gps}? 'Yes' : 'No'">gps></a></td>
+            </tr>
+            <tr>
+                <td>airconditioning:</td>
+                <td><a th:text="${venueName.airConditioning}? 'Yes' : 'No'">airco></a></td>
+            </tr>
+            <tr>
+                <td>automatic:</td>
+                <td><a th:text="${venueName.automatic}? 'Yes' : 'No'">automatic></a></td>
+            </tr>
+            <tr>
+                <td>manuel:</td>
+                <td><a th:text="${venueName.manual}? 'Yes' : 'No'">manuel></a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row1content" th:unless="${venueName}">
+        <p>no venue was chosen</p>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">footer</div>
+</body>
+</html>

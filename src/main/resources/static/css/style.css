@@ -1,0 +1,117 @@
+body {
+    background-color: white;
+    color: #000000;
+    font-family: Verdana, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 4em;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+}
+
+p {
+    padding: 10px 50px;
+}
+
+.nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #95f8e4;
+    color: #95f8e4;
+    height: 40px;
+}
+
+.navbuttons {
+    display: flex;
+    height: 39px;
+}
+
+.bottom {
+    background-color: #95f8e4;
+    color: #000000;
+    font-size: 0.7em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom p {
+    text-align: center;
+}
+
+.row1 {
+    display: flex;
+    position: relative;
+    margin: 10px 0 20px 0;
+}
+
+.row1 img {
+    width: 100%;
+    height: auto;
+}
+
+.row1content {
+    flex-grow: 4;
+    margin: 0 50px 40px 50px;
+}
+
+.row1content h2 {
+    text-align: center;
+}
+
+a.buttonLook {
+    display: block;
+    background-color: #95f8e4;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px #95f8e4;
+}
+
+a.buttonLook:hover {
+    background-color: #000000;
+    color: #95f8e4;
+    border: solid 1px #95f8e4;
+}
+
+a.buttonLook:active {
+    background-color: #030303;
+    color: #95f8e4;
+}
+
+a.mediumButton {
+    margin: 10px auto;
+    width: 400px;
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+a.smallButton {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+a.menuButton {
+    margin: 0 10px;
+    width: 6em;
+    padding: 0.2em;
+}
+
+.prevButtonDiv {
+    position: absolute;
+    left: 10px;
+}
+
+.nextButtonDiv {
+    position: absolute;
+    right: 10px;
+}
