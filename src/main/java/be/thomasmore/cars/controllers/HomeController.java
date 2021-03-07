@@ -1,24 +1,19 @@
 package be.thomasmore.cars.controllers;
 import be.thomasmore.cars.model.venue;
-
+import be.thomasmore.cars.repositories.venueRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Optional;
+
 @Controller
 public class HomeController {
 
-    private final venue[] venues={
-            new venue("Opel Corsa 120 year 70","Opel",9999,12848,"benzine","04.2019","zwart",true,true,false,true,false,true),
-            new venue("Renault Clio Grandtour life 74","Renault",9499,46410,"benzine","04.2018","wit",true,true,false,false,false,true),
-            new venue("Renault Twingo TCE intens 92","Renault",11499,0,"benzine","09.2020","zwart",true,true,true,true,false,true),
-            new venue("Mini 3 doors ONE first OPF 75","Mini",15999,33258,"benzine","05.2019","blauw",true,true,false,true,false,true),
-            new venue("Volkswagen Golf VII Variant TDI comfortline 115","Volkswagen",14999,71830,"diesel","07.2017","donker blauw",true,true,true,true,false,true),
-            new venue("Aiways U5 electric 170","Aiways",31999,2087,"elektrische","11.2020","zwart",true,true,true,true,true,false),
-            new venue("Audi A3 Sportback FSI s line 110","Audi",27999,0,"benzine","10.2020","zwart",true,true,true,true,false,true),
-
-    };
+    @Autowired
+    private venueRepository venueRepository;
 
     @GetMapping({"/", "/home"})
     public String home(Model model) {
@@ -30,18 +25,23 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping({"/venuedetails", "/venuedetails/{index}"})
+    @GetMapping({"/venuedetails", "/venuedetails/{id}"})
     public String venueDetails(Model model,
-                               @PathVariable(required = false) Integer index) {
-        if (index != null && index >= 0 && index < venues.length) {
-            model.addAttribute("venueName", venues[index]);
-            model.addAttribute("prevIndex", index > 0 ? index - 1 : venues.length - 1);
-            model.addAttribute("nextIndex", index < venues.length - 1 ? index + 1 : 0);
+                               @PathVariable(required = false) Integer id) {
+        if (id == null) return "venuedetails";
+
+        Optional<venue> optionalVenue = venueRepository.findById(id);
+        if (optionalVenue.isPresent()) {
+            long nrOfVenues = venueRepository.count();
+            model.addAttribute("venue", optionalVenue.get());
+            model.addAttribute("prevId", id > 1 ? id - 1 : nrOfVenues);
+            model.addAttribute("nextId", id < nrOfVenues ? id + 1 : 1);
         }
         return "venuedetails";
     }
     @GetMapping("/venuelist")
     public String venuelist(Model model){
+        Iterable<venue> venues = venueRepository.findAll();
         model.addAttribute("venues", venues);
         return "venuelist";
     }

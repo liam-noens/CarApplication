@@ -1,6 +1,12 @@
 package be.thomasmore.cars.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class venue {
+    @Id
+    private int id;
     private String name;
     private String brand;
     private int price;
@@ -13,9 +19,9 @@ public class venue {
     private boolean gps;
     private boolean airConditioning;
     private boolean automatic;
-    private boolean manual;
+    private boolean manuall;
 
-    public venue(String name, String brand, int price, int kilometers, String fuel, String year, String color, boolean forSale, boolean radio, boolean gps, boolean airConditioning, boolean automatic, boolean manual) {
+    public venue(String name, String brand, int price, int kilometers, String fuel, String year, String color, boolean forSale, boolean radio, boolean gps, boolean airConditioning, boolean automatic, boolean manuall) {
         this.name = name;
         this.brand = brand;
         this.price = price;
@@ -28,7 +34,18 @@ public class venue {
         this.gps = gps;
         this.airConditioning = airConditioning;
         this.automatic = automatic;
-        this.manual = manual;
+        this.manuall = manuall;
+    }
+
+    public venue() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -127,11 +144,11 @@ public class venue {
         this.automatic = automatic;
     }
 
-    public boolean isManual() {
-        return manual;
+    public boolean isManuall() {
+        return manuall;
     }
 
-    public void setManual(boolean manual) {
-        this.manual = manual;
+    public void setManuall(boolean manuall) {
+        this.manuall = manuall;
     }
 }
