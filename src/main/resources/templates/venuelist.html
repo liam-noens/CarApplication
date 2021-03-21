@@ -10,7 +10,115 @@
 
 <div class="row1">
     <div class="row1content">
-        <h2>venues</h2>
+        <h2>car list</h2>
+        <div th:unless="${showFilters}" class="filters">
+            <a th:href="@{/venuelist/filter}"><button class="button">filter</button></a>
+        </div>
+        <div th:text="|${nrOfVenues} cars found|">7 auto's </div>
+        <div th:if="${showFilters}" class="filters">
+            <a th:href="@{/venuelist}"><button class="button">back</button></a>
+            <form>
+                <div class="filter">
+                    <input type="submit" value="search" class="button">
+                </div>
+                <h3>Price:</h3>
+                <div class="filter">
+                    <label for="minPrice" class="filterName">min</label>
+                    <input type="number" id="minPrice" name="minPrice" th:value="${minPrice}" value="0" step="1000"> €
+                </div>
+                <div class="filter">
+                    <label for="maxPrice" class="filterName">max</label>
+                    <input type="number" id="maxPrice" name="maxPrice" th:value="${maxPrice}" value="0" step="1000"> €
+                </div>
+                <h3>Kilometers:</h3>
+                <div class="filter">
+                    <label for="minKilometers" class="filterName">min </label>
+                    <input type="number" id="minKilometers" name="minKm" th:value="${minKm}" value="0" step="1000"> km
+                </div>
+                <div class="filter">
+                    <label for="maxKilometers" class="filterName">max</label>
+                    <input type="number" id="maxKilometers" name="maxKm" th:value="${maxKm}" value="0" step="1000"> km
+                </div>
+                <h3>For Sale:</h3>
+                <div class="filter">
+                    <label for="forSale_yes" class="filterName">yes</label>
+                    <input type="radio" id="forSale_yes" name="filterForSale" value="yes" th:checked="${filterForSale=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="forSale_no" class="filterName">no</label>
+                    <input type="radio" id="forSale_no" name="filterForSale" value="no" th:checked="${filterForSale=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="forSale_all" class="filterName">all</label>
+                    <input type="radio" id="forSale_all" name="filterForSale" value="all" th:checked="${filterForSale=='all'}">
+                </div>
+                <h3>Radio:</h3>
+                <div class="filter">
+                    <label for="radio_yes" class="filterName">yes</label>
+                    <input type="radio" id="radio_yes" name="filterRadio" value="yes" th:checked="${filterRadio=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="radio_no" class="filterName">no</label>
+                    <input type="radio" id="radio_no" name="filterRadio" value="no" th:checked="${filterRadio=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="radio_all" class="filterName">all</label>
+                    <input type="radio" id="radio_all" name="filterRadio" value="all" th:checked="${filterRadio=='all'}">
+                </div>
+                <h3>GPS:</h3>
+                <div class="filter">
+                    <label for="GPS_yes" class="filterName">yes</label>
+                    <input type="radio" id="GPS_yes" name="filterGPS" value="yes" th:checked="${filterGPS=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="GPS_no" class="filterName">no</label>
+                    <input type="radio" id="GPS_no" name="filterGPS" value="no" th:checked="${filterGPS=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="GPS_all" class="filterName">all</label>
+                    <input type="radio" id="GPS_all" name="filterGPS" value="all" th:checked="${filterGPS=='all'}">
+                </div>
+                <h3>Airconditioning:</h3>
+                <div class="filter">
+                    <label for="Airco_yes" class="filterName">yes</label>
+                    <input type="radio" id="Airco_yes" name="filterAirco" value="yes" th:checked="${filterAirco=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="Airco_no" class="filterName">no</label>
+                    <input type="radio" id="Airco_no" name="filterAirco" value="no" th:checked="${filterAirco=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="Airco_all" class="filterName">all</label>
+                    <input type="radio" id="Airco_all" name="filterAirco" value="all" th:checked="${filterAirco=='all'}">
+                </div>
+                <h3>Automatic:</h3>
+                <div class="filter">
+                    <label for="Automatic_yes" class="filterName">yes</label>
+                    <input type="radio" id="Automatic_yes" name="filterAutomatic" value="yes" th:checked="${filterAutomatic=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="Automatic_no" class="filterName">no</label>
+                    <input type="radio" id="Automatic_no" name="filterAutomatic" value="no" th:checked="${filterAutomatic=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="Automatic_all" class="filterName">all</label>
+                    <input type="radio" id="Automatic_all" name="filterAutomatic" value="all" th:checked="${filterAutomatic=='all'}">
+                </div>
+                <h3>manuel:</h3>
+                <div class="filter">
+                    <label for="Manuel_yes" class="filterName">yes</label>
+                    <input type="radio" id="Manuel_yes" name="filterManual" value="yes" th:checked="${filterManual=='yes'}">
+                </div>
+                <div class="filter">
+                    <label for="Manuel_no" class="filterName">no</label>
+                    <input type="radio" id="Manuel_no" name="filterManual" value="no" th:checked="${filterManual=='no'}">
+                </div>
+                <div class="filter">
+                    <label for="Manuel_all" class="filterName">all</label>
+                    <input type="radio" id="Manuel_all" name="filterManual" value="all" th:checked="${filterManual=='all'}">
+                </div>
+            </form>
+        </div>
         <div th:each="venue: ${venues}">
             <a class="buttonLook mediumButton"
                th:href="@{|/venuedetails/${venue.id}|}"

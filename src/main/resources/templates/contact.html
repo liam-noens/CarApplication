@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">header</div>
+
+<div class="row1">
+    <div class="row1content">
+        <h2>Contacteer ons</h2>
+        <form action="post.php" method="post">
+            <fieldset>
+                <legend>Persoonlijke gegevens</legend>
+                <label for="firstName" class="formLabel">Voornaam</label>
+                <input type="text" name="Voornaam" id="firstName" class="formInput"/><br/>
+                <label for="lastName" class="formLabel">Familienaam</label>
+                <input type="text" name="Familienaam" id="lastName" class="formInput"/><br/>
+                <label for="email" class="formLabel">E-mail</label>
+                <input type="email" name="E-mail" id="email" class="formInput"/><br/>
+                <label for="tel" class="formLabel">telefoonnummer</label>
+                <input type="tel" name="telefoonnummer" id="tel" class="formInput"/><br/>
+                <label for="question" class="formLabel">je vraag</label>
+                <textarea name="Vraag" id="question" cols="30" rows="10"></textarea>
+            </fieldset>
+            <input type="submit" value="Verstuur" class="button">
+        </form>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer">footer</div>
+</body>
+</html>

@@ -67,7 +67,15 @@ p {
 .row1content h2 {
     text-align: center;
 }
-
+.button{
+    background-color: #a09be7ff;
+    color: #313638ff;
+    text-align: center;
+}
+.button:hover{
+    background-color: #313638ff;
+    color: #a09be7ff;
+}
 a.buttonLook {
     display: block;
     background-color: #a09be7ff;
@@ -120,6 +128,37 @@ a.menuButton {
     margin-left: auto;
     text-align: center;
 }
+.filter{
+    display: flex;
+    margin: 2px 0;
+}
+.filters{
+    margin: 15px 50px 0 0;
+    float: left;
+    width: 35%;
+}
+.filterName{
+    width: 4em;
+}
+.formLabel,
+.formInput,
+select {
+    display: inline-block;
+    margin: 10px 0;
+}
+fieldset .formLabel,
+fieldset .formInput,
+fieldset select,
+fieldset textarea {
+    min-width: 25%;
+    vertical-align: top;
+}
+
+.formLabel {
+    text-align: right;
+}
+
+
 *{
     margin: 0;
     padding: 0;
