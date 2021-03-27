@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class venue {
+public class car {
     @Id
     private int id;
     private String name;
@@ -21,7 +21,7 @@ public class venue {
     private boolean automatic;
     private boolean manuall;
 
-    public venue(String name, String brand, int price, int kilometers, String fuel, String year, String color, boolean forSale, boolean radio, boolean gps, boolean airConditioning, boolean automatic, boolean manuall) {
+    public car(String name, String brand, int price, int kilometers, String fuel, String year, String color, boolean forSale, boolean radio, boolean gps, boolean airConditioning, boolean automatic, boolean manuall) {
         this.name = name;
         this.brand = brand;
         this.price = price;
@@ -37,7 +37,7 @@ public class venue {
         this.manuall = manuall;
     }
 
-    public venue() {
+    public car() {
     }
 
     public int getId() {

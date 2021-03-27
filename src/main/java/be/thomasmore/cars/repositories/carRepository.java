@@ -1,15 +1,15 @@
 package be.thomasmore.cars.repositories;
 
-import be.thomasmore.cars.model.venue;
+import be.thomasmore.cars.model.car;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface venueRepository extends CrudRepository<venue, Integer> {
+public interface carRepository extends CrudRepository<car, Integer> {
 
-    @Query("SELECT v FROM venue v WHERE " +
+    @Query("SELECT v FROM car v WHERE " +
             "(:minPrice IS NULL OR :minPrice <= v.price) AND " +
             "(:maxPrice IS null OR v.price <= :maxPrice) AND " +
             "(:minKm IS NULL OR :minKm <= v.kilometers) AND " +
@@ -21,14 +21,14 @@ public interface venueRepository extends CrudRepository<venue, Integer> {
             "(:automatic is null or v.automatic=:automatic) and " +
             "(:manual is null or v.manuall=:manual)")
 
-    List<venue> findByFilter(@Param("minPrice") Integer minPrice,
-                             @Param("maxPrice") Integer maxPrice,
-                             @Param("minKm") Integer minKm,
-                             @Param("maxKm") Integer maxKm,
-                             @Param("forSale") Boolean forSale,
-                             @Param("radio") Boolean radio,
-                             @Param("gps") Boolean gps,
-                             @Param("airConditioning") Boolean airConditioning,
-                             @Param("automatic") Boolean automatic,
-                             @Param("manual") Boolean manual);
+    List<car> findByFilter(@Param("minPrice") Integer minPrice,
+                           @Param("maxPrice") Integer maxPrice,
+                           @Param("minKm") Integer minKm,
+                           @Param("maxKm") Integer maxKm,
+                           @Param("forSale") Boolean forSale,
+                           @Param("radio") Boolean radio,
+                           @Param("gps") Boolean gps,
+                           @Param("airConditioning") Boolean airConditioning,
+                           @Param("automatic") Boolean automatic,
+                           @Param("manual") Boolean manual);
 }
