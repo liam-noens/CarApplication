@@ -9,68 +9,68 @@
 <div th:replace="fragments/header :: header">header</div>
 
 <div class="row1">
-    <div class="row1content" th:if="${venue}">
-        <h2 th:text="${venue.name}">venuedetails</h2>
+    <div class="row1content" th:if="${car}">
+        <h2 th:text="${car.name}">car details</h2>
 
         <div class="prevButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/venuedetails/${prevId}|}">&lt;</a>
+            <a class="buttonLook smallButton" th:href="@{|/cardetails/${prevId}|}">&lt;</a>
         </div>
         <div class="nextButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/venuedetails/${nextId}|}">&gt;</a>
+            <a class="buttonLook smallButton" th:href="@{|/cardetails/${nextId}|}">&gt;</a>
         </div>
-        <div class="venueinfo">
+        <div class="carinfo">
             <div class="infoLine">
                 <div class="infoLineName">merk:</div>
-                <div class="infoLineValue" th:text="${venue.brand}">brand></div>
+                <div class="infoLineValue" th:text="${car.brand}">brand></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">prijs van de auto:</div>
-                <div class="infoLineValue" th:text="${venue.price} + ' euro'">prijs></div>
+                <div class="infoLineValue" th:text="${car.price} + ' euro'">prijs></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">hoeveel km op de telller:</div>
-                <div class="infoLineValue" th:text="${venue.kilometers} + ' km'">km></div>
+                <div class="infoLineValue" th:text="${car.kilometers} + ' km'">km></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">brandstof:</div>
-                <div class="infoLineValue" th:text="${venue.fuel}">brandstof></div>
+                <div class="infoLineValue" th:text="${car.fuel}">brandstof></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">Jaar:</div>
-                <div class="infoLineValue" th:text="${venue.year}">Jaar></div>
+                <div class="infoLineValue" th:text="${car.year}">Jaar></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">kleur:</div>
-                <div class="infoLineValue" th:text="${venue.color}">kleur></div>
+                <div class="infoLineValue" th:text="${car.color}">kleur></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">for sale:</div>
-                <div class="infoLineValue" th:text="${venue.forSale}? 'Yes' : 'No'">for sale></div>
+                <div class="infoLineValue" th:text="${car.forSale}? 'Yes' : 'No'">for sale></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">radio:</div>
-                <div class="infoLineValue" th:text="${venue.radio}? 'Yes' : 'No'">radio></div>
+                <div class="infoLineValue" th:text="${car.radio}? 'Yes' : 'No'">radio></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">gps:</div>
-                <div class="infoLineValue" th:text="${venue.gps}? 'Yes' : 'No'">gps></div>
+                <div class="infoLineValue" th:text="${car.gps}? 'Yes' : 'No'">gps></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">airconditioning:</div>
-                <div class="infoLineValue" th:text="${venue.airConditioning}? 'Yes' : 'No'">airco></div>
+                <div class="infoLineValue" th:text="${car.airConditioning}? 'Yes' : 'No'">airco></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">automatic:</div>
-                <div class="infoLineValue" th:text="${venue.automatic}? 'Yes' : 'No'">automatic></div>
+                <div class="infoLineValue" th:text="${car.automatic}? 'Yes' : 'No'">automatic></div>
             </div>
             <div class="infoLine">
                 <div class="infoLineName">manuel:</div>
-                <div class="infoLineValue" th:text="${venue.manuall}? 'Yes' : 'No'">manuel></div>
+                <div class="infoLineValue" th:text="${car.manuall}? 'Yes' : 'No'">manuel></div>
             </div>
         </div>
     </div>
-    <div class="row1content" th:unless="${venue}">
-        <p>no venue was chosen</p>
+    <div class="row1content" th:unless="${car}">
+        <p>no car was chosen</p>
     </div>
 </div>
 <div th:replace="fragments/footer :: footer">footer</div>

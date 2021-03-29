@@ -30,7 +30,7 @@ public class CarController {
         Optional<car> optionalCar = carRepository.findById(id);
         if (optionalCar.isPresent()) {
             long nrOfCar = carRepository.count();
-            model.addAttribute("venue", optionalCar.get());
+            model.addAttribute("car", optionalCar.get());
             model.addAttribute("prevId", id > 1 ? id - 1 : nrOfCar);
             model.addAttribute("nextId", id < nrOfCar ? id + 1 : 1);
         }
@@ -56,7 +56,7 @@ public class CarController {
                                   @RequestParam(required = false) String filterAirco,
                                   @RequestParam(required = false) String filterAutomatic,
                                   @RequestParam(required = false) String filterManual){
-        logger.info(String.format("venueListFilter -- minPrice=%d, maxPrice=%d, minKm=%d, maxKm=%d, filterForSale=%s, filterRadio=%s, filterGPS=%s, filterAirco=%s, filterAutomatic=%s, filterManual=%s",
+        logger.info(String.format("carListFilter -- minPrice=%d, maxPrice=%d, minKm=%d, maxKm=%d, filterForSale=%s, filterRadio=%s, filterGPS=%s, filterAirco=%s, filterAutomatic=%s, filterManual=%s",
                 minPrice, maxPrice, minKm, maxKm, filterForSale, filterRadio, filterGPS, filterAirco, filterAutomatic, filterManual));
 
         List<car> cars = carRepository.findByFilter(minPrice, maxPrice, minKm, maxKm,

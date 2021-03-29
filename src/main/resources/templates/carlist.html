@@ -120,19 +120,14 @@
                 </div>
             </form>
         </div>
-       <!-- <div th:each="venue: ${venues}">
-            <a class="buttonLook mediumButton"
-               th:href="@{|/venuedetails/${venue.id}|}"
-               th:text="${venue.name}">venue name</a>
-        </div>-->
         <div class="row">
-            <div class="col-sm-4" th:each="car:${cars}">
+            <div class="col-sm-3" th:each="car:${cars}">
                 <div class="card">
                     <img class="card-img-top img-fluid" th:src="@{/img/car logo2.jpg}" alt="Card image">
                     <div class="text-center card-body">
-                        <h4 class="card-title">
+                        <h6 class="card-title">
                             <span th:text="${car.name}">car name </span>
-                        </h4>
+                        </h6>
                         <p class="card-text" th:text="|Price ${car.price}|"></p>
 
                     </div>
@@ -144,21 +139,6 @@
         </div>
     </div>
 </div>
-
-<!--<div class="grid">
-    <div class="grid-item">
-        <div class="card">
-            <img class="card-img" src="../static/img/car%20logo.jpg" alt="fiat">
-            <div class="card-content">
-                <h1 class="card-header">Fiat</h1>
-                <p class="card-text">
-                </p>
-                <div th:each="venue: ${venues}">
-                <button class="card-btn" th:href="@{|/venuedetails/${venue.id}|}">visit <span>&rarr;</span></button></div>
-            </div>
-        </div>
-    </div>
-</div>-->
 
 <div th:replace="fragments/footer :: footer">footer</div>
 </body>
