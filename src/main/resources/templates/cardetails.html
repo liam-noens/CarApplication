@@ -68,11 +68,11 @@
                 <div class="infoLineName">manuel:</div>
                 <div class="infoLineValue" th:text="${car.manuall}? 'Yes' : 'No'">manuel></div>
             </div>
-            <h3>
+            <h6>
                 <span th:text="${car.name}">name</span>
                 is verkrijgbaar in
                 <a th:href="@{|/placedetails/${car.place.id}|}" th:text="${car.place.stad}">stad</a>
-            </h3>
+            </h6>
         </div>
     </div>
     <div class="row1content" th:unless="${car}">

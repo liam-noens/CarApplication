@@ -5,6 +5,7 @@ import java.util.Collection;
 
 @Entity
 public class Car {
+
     @Id
     private int id;
     private String name;
@@ -21,7 +22,7 @@ public class Car {
     private boolean automatic;
     private boolean manuall;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Place place;
 
 

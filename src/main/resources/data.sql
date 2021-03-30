@@ -1,3 +1,41 @@
+
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (1, 'Antwerpen', 'Boomsesteenweg 958', '2610', '03 870 75 00', '10u tot 19u');
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (2, 'Brugge', 'Gaston Roelandtsstraat 7', '8020 ', '050 38 30 14', '10u tot 19u');
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (3, 'Charleroi', 'Rue Robesse 28', '6041', '071 21 23 90', '10u tot 19u');
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (4, 'Dendermonde', 'Mechelsesteenweg 35', '9200 ', '052 40 94 30', '8u30 tot 19u');
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (5, 'Lier', 'Mechelsesteenweg 254/1', '2500', '03 489 04 98', '10u tot 19u');
+
+insert into PLACE (
+    ID, STAD, STRAAT, POSTCODE,
+    TELEFOONNUMER, OPENINGSUREN)
+
+values (6, 'Hasselt', 'Luikersteenweg 346', '3500 ', '011 27 84 30', '10u tot 19u');
+
 insert into CAR (
     ID, NAME, BRAND, PRICE,
     KILOMETERS, FUEL, YEAR, COLOR,
@@ -47,40 +85,3 @@ insert into CAR (
     FOR_SALE, RADIO, GPS, AIR_CONDITIONING, AUTOMATIC, MANUALL, place_id)
 
 values (8, 'Opel Adam 70', 'Opel', 8499, 48554, 'benzine', '11.2016', 'wit', true, true, false, false, false, true, 3);
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (1, 'Antwerpen', 'Boomsesteenweg 958', '2610', '03 870 75 00', '10u tot 19u');
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (2, 'Brugge', 'Gaston Roelandtsstraat 7', '8020 ', '050 38 30 14', '10u tot 19u');
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (3, 'Charleroi', 'Rue Robesse 28', '6041', '071 21 23 90', '10u tot 19u');
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (4, 'Dendermonde', 'Mechelsesteenweg 35', '9200 ', '052 40 94 30', '8u30 tot 19u');
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (5, 'Lier', 'Mechelsesteenweg 254/1', '2500', '03 489 04 98', '10u tot 19u');
-
-insert into PLACE (
-    ID, STAD, STRAAT, POSTCODE,
-    TELEFOONNUMER, OPENINGSUREN)
-
-values (6, 'Hasselt', 'Luikersteenweg 346', '3500 ', '011 27 84 30', '10u tot 19u');
-
