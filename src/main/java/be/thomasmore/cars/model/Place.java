@@ -1,9 +1,10 @@
 package be.thomasmore.cars.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
+
 @Entity
-public class place {
+public class Place {
     @Id
     private int id;
     private String stad;
@@ -12,15 +13,15 @@ public class place {
     private String telefoonnumer;
     private String openingsuren;
 
-    public place(String stad, String straat, String postcode, String telefoonnumer, String openingsuren) {
+    public Place() {
+    }
+
+    public Place(String stad, String straat, String postcode, String telefoonnumer, String openingsuren) {
         this.stad = stad;
         this.straat = straat;
         this.postcode = postcode;
         this.telefoonnumer = telefoonnumer;
         this.openingsuren = openingsuren;
-    }
-
-    public place() {
     }
 
     public int getId() {

@@ -11,16 +11,15 @@
 
 <div class="row1">
     <div class="row1content">
-        <h2>car list</h2>
-        <div th:unless="${showFilters}" class="filters">
+        <div th:unless="${showFilters}" class="filterslist">
             <a th:href="@{/carlist/filter}"><button class="button">filter</button></a>
         </div>
-        <div th:text="|${nrOfCars} cars found|">7 auto's </div>
         <div th:if="${showFilters}" class="filters">
             <a th:href="@{/carlist}"><button class="button">back</button></a>
             <form>
                 <div class="filter">
-                    <input type="submit" value="search" class="button">
+                    <input type="submit" value="search" class="button"> <h4>
+                    <div th:text="|${nrOfCars} Cars found|">7 auto's </div></h4>
                 </div>
                 <h3>Price:</h3>
                 <div class="filter">
@@ -128,7 +127,7 @@
                         <h6 class="card-title">
                             <span th:text="${car.name}">car name </span>
                         </h6>
-                        <p class="card-text" th:text="|Price ${car.price}|"></p>
+                        <p class="card-text" th:text="|Price: ${car.price}|+ '€  '"></p>
 
                     </div>
                     <div class="text-center card-footer">

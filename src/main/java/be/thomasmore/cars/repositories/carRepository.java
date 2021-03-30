@@ -1,15 +1,15 @@
 package be.thomasmore.cars.repositories;
 
-import be.thomasmore.cars.model.car;
+import be.thomasmore.cars.model.Car;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface carRepository extends CrudRepository<car, Integer> {
+public interface carRepository extends CrudRepository<Car, Integer> {
 
-    @Query("SELECT v FROM car v WHERE " +
+    @Query("SELECT v FROM Car v WHERE " +
             "(:minPrice IS NULL OR :minPrice <= v.price) AND " +
             "(:maxPrice IS null OR v.price <= :maxPrice) AND " +
             "(:minKm IS NULL OR :minKm <= v.kilometers) AND " +
@@ -21,7 +21,7 @@ public interface carRepository extends CrudRepository<car, Integer> {
             "(:automatic is null or v.automatic=:automatic) and " +
             "(:manual is null or v.manuall=:manual)")
 
-    List<car> findByFilter(@Param("minPrice") Integer minPrice,
+    List<Car> findByFilter(@Param("minPrice") Integer minPrice,
                            @Param("maxPrice") Integer maxPrice,
                            @Param("minKm") Integer minKm,
                            @Param("maxKm") Integer maxKm,

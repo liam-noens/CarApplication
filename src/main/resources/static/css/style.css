@@ -1,6 +1,5 @@
 
 body {
-    background-color: #ccfbfeff;
     color: #313638ff;
     font-family: Verdana, sans-serif;
     margin: 0;
@@ -22,10 +21,6 @@ p {
 }
 
 .nav {
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
     background-color: #a09be7ff;
     color: #a09be7ff;
     height: 40px;
@@ -34,6 +29,7 @@ p {
 .navbuttons {
     display: flex;
     height: 39px;
+    align-items: center;
 }
 
 .bottom {
@@ -65,9 +61,7 @@ p {
     margin: 0 50px 40px 50px;
 }
 
-.row1content h2 {
-    text-align: center;
-}
+
 .button{
     background-color: #a09be7ff;
     color: #313638ff;
@@ -122,21 +116,25 @@ a.menuButton {
 
 .nextButtonDiv {
     position: absolute;
-    right: 10px;
+    left: 50px;
 }
 .carinfo{
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+    margin-top: 100px;
+}
+.placeinfo{
+    margin-top: 100px;
 }
 .filter{
     display: flex;
     margin: 2px 0;
 }
 .filters{
-    margin: 15px 50px 0 0;
+    float: right;
+    width: 25%;
+    border: 3px solid #000000;
+}
+.filterslist{
     float: left;
-    width: 35%;
 }
 .filterName{
     width: 4em;
@@ -159,8 +157,13 @@ fieldset textarea {
     text-align: right;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+.card{
+    height: 100%;
 }
 
+.col-sm-3{
+    padding: 1%;
+}
+.col-sm-4{
+    padding: 0.5%;
+}

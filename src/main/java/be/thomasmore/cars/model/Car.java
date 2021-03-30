@@ -1,10 +1,10 @@
 package be.thomasmore.cars.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
-public class car {
+public class Car {
     @Id
     private int id;
     private String name;
@@ -21,23 +21,11 @@ public class car {
     private boolean automatic;
     private boolean manuall;
 
-    public car(String name, String brand, int price, int kilometers, String fuel, String year, String color, boolean forSale, boolean radio, boolean gps, boolean airConditioning, boolean automatic, boolean manuall) {
-        this.name = name;
-        this.brand = brand;
-        this.price = price;
-        this.kilometers = kilometers;
-        this.fuel = fuel;
-        this.year = year;
-        this.color = color;
-        this.forSale = forSale;
-        this.radio = radio;
-        this.gps = gps;
-        this.airConditioning = airConditioning;
-        this.automatic = automatic;
-        this.manuall = manuall;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Place place;
 
-    public car() {
+
+    public Car() {
     }
 
     public int getId() {
@@ -150,5 +138,13 @@ public class car {
 
     public void setManuall(boolean manuall) {
         this.manuall = manuall;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 }

@@ -1,5 +1,5 @@
 package be.thomasmore.cars.controllers;
-import be.thomasmore.cars.model.place;
+import be.thomasmore.cars.model.Place;
 import be.thomasmore.cars.repositories.placeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +17,8 @@ public class PlacesController {
 
     @GetMapping("/placelist")
         public String placeList(Model model){
-        Iterable<place> places = placeRepository.findAll();
+        Iterable<Place> places = placeRepository.findAll();
         model.addAttribute("places", places);
-        model.addAttribute("showFilters", false);
         return "placelist";
     }
 
@@ -27,7 +26,7 @@ public class PlacesController {
     public String placeDetails(Model model, @PathVariable(required = false) Integer id){
         if (id == null) return "placedetails";
 
-        Optional<place> optionalPlace = placeRepository.findById(id);
+        Optional<Place> optionalPlace = placeRepository.findById(id);
         if (optionalPlace.isPresent()){
             long nrOfPLace = placeRepository.count();
             model.addAttribute("place", optionalPlace.get());

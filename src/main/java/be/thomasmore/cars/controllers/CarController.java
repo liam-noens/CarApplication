@@ -1,6 +1,6 @@
 package be.thomasmore.cars.controllers;
 
-import be.thomasmore.cars.model.car;
+import be.thomasmore.cars.model.Car;
 import be.thomasmore.cars.repositories.carRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class CarController {
                                @PathVariable(required = false) Integer id) {
         if (id == null) return "cardetails";
 
-        Optional<car> optionalCar = carRepository.findById(id);
+        Optional<Car> optionalCar = carRepository.findById(id);
         if (optionalCar.isPresent()) {
             long nrOfCar = carRepository.count();
             model.addAttribute("car", optionalCar.get());
@@ -38,7 +38,7 @@ public class CarController {
     }
     @GetMapping("/carlist")
     public String carlist(Model model){
-        Iterable<car> cars = carRepository.findAll();
+        Iterable<Car> cars = carRepository.findAll();
         model.addAttribute("cars", cars);
         model.addAttribute("showFilters",false);
         return "carlist";
@@ -59,11 +59,11 @@ public class CarController {
         logger.info(String.format("carListFilter -- minPrice=%d, maxPrice=%d, minKm=%d, maxKm=%d, filterForSale=%s, filterRadio=%s, filterGPS=%s, filterAirco=%s, filterAutomatic=%s, filterManual=%s",
                 minPrice, maxPrice, minKm, maxKm, filterForSale, filterRadio, filterGPS, filterAirco, filterAutomatic, filterManual));
 
-        List<car> cars = carRepository.findByFilter(minPrice, maxPrice, minKm, maxKm,
+        List<Car> Cars = carRepository.findByFilter(minPrice, maxPrice, minKm, maxKm,
                 filterStringToBoolean(filterForSale), filterStringToBoolean(filterRadio), filterStringToBoolean(filterGPS),filterStringToBoolean(filterAirco),filterStringToBoolean(filterAutomatic),filterStringToBoolean(filterManual));
 
-        model.addAttribute("cars", cars);
-        model.addAttribute("nrOfCars", cars.size());
+        model.addAttribute("cars", Cars);
+        model.addAttribute("nrOfCars", Cars.size());
         model.addAttribute("showFilters", true);
         model.addAttribute("minPrice", minPrice);
         model.addAttribute("maxPrice", maxPrice);

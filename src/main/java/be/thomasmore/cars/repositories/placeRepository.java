@@ -1,7 +1,7 @@
 package be.thomasmore.cars.repositories;
 
-import be.thomasmore.cars.model.place;
+import be.thomasmore.cars.model.Place;
 import org.springframework.data.repository.CrudRepository;
 
-public interface placeRepository extends CrudRepository<place, Integer> {
+public interface placeRepository extends CrudRepository<Place, Integer> {
 }
