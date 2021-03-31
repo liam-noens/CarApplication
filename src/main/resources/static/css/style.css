@@ -167,3 +167,18 @@ fieldset textarea {
 .col-sm-4{
     padding: 0.5%;
 }
+
+@media only screen and (max-width: 620px){
+    .col-sm-3{
+        padding: 1.5%;
+    }
+
+    .col-sm-4{
+        padding: 1.5%;
+    }
+
+    .filters{
+        width: 100%;
+        border: 3px solid #a09be7ff;
+    }
+}
